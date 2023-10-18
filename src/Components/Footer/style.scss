@@ -109,6 +109,14 @@ footer{
     display: none;
 }
 
+@media (min-width: 2000px){
+    footer{
+        .footer-section{
+            width: 1900px;
+        }
+    }
+}
+
 @media (max-width: 950px){
     footer{
         .footer-section{

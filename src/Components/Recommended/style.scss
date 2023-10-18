@@ -82,6 +82,14 @@
     }
 }
 
+@media (min-width: 2000px){
+    .recommended-section{
+        .recommended-section-container{
+            width: 1900px;
+        }
+    }
+}
+
 @media(max-width: 1000px){
     .recommended-section{
         .recommended-section-container{

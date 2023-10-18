@@ -158,8 +158,8 @@ const Authentication = () =>{
                             label={"Password"}
                             placeholder={"Enter your password"}
                             autoComplete={"new-password"}
-                            invisible={invisibleIcon}
-                            visible={visibleIcon}
+                            visible={invisibleIcon}
+                            invisible={visibleIcon}
                             inputType={passwordVisibility}
                             visibilityToggle={visibilityToggle}
                             inputValue={password}
@@ -170,8 +170,8 @@ const Authentication = () =>{
                             label={"Confirm password"}
                             placeholder={"Confirm your password"}
                             autoComplete={"new-password"}
-                            invisible={invisibleIcon}
-                            visible={visibleIcon}
+                            visible={invisibleIcon}
+                            invisible={visibleIcon}
                             inputType={confirmPasswordVisibility}
                             visibilityToggle={visibilityToggle}
                             inputValue={confirmPassword}

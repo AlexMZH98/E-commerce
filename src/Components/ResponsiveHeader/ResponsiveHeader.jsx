@@ -8,7 +8,7 @@ import search from "../../assets/images/responsive_header/search.png"
 
 import "./style.scss"
 
-const ResponsiveHeader = ({burgerToggle, changeCartAsseccToggle}) => {
+const ResponsiveHeader = ({burgerToggle, changeCartAccessToggle}) => {
     const navigate = useNavigate()
     const {pathname} = useLocation()
 
@@ -79,7 +79,7 @@ const ResponsiveHeader = ({burgerToggle, changeCartAsseccToggle}) => {
                         <div>
                             <img src={shopping_cart} alt="logo" onClick={() => {
                                 if(!userToken){
-                                    changeCartAsseccToggle("assecc")
+                                    changeCartAccessToggle("restrict")
                                 }else{
                                     navigate('/cart')
                                 }

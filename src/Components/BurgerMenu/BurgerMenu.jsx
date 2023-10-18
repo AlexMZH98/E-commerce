@@ -13,7 +13,7 @@ import mycart from "../../assets/images/icons/MyCart.png"
 
 import "./style.scss"
 
-const BurgerMenu = ({active, changeActive, changeCartAsseccToggle}) => {
+const BurgerMenu = ({active, changeActive, changeCartAccessToggle}) => {
 
     const {cartData} = useSelector(state => state.cart)
     const navigate = useNavigate()
@@ -85,7 +85,8 @@ const BurgerMenu = ({active, changeActive, changeCartAsseccToggle}) => {
                     </li>
                     <li onClick={() => {
                         if(!userToken){
-                            changeCartAsseccToggle("assecc")
+                            changeCartAccessToggle("restrict")
+                            return
                         }else{
                             navigate('/cart')
                             changeActive()

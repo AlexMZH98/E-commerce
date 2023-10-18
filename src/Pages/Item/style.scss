@@ -503,6 +503,19 @@
     }
 }
 
+@media (min-width: 2000px){
+    .item-details-section{
+        .item-detail{
+            width: 1900px;
+        }
+    }
+    .item-description-section{
+        .item-description-section-container{
+            width: 1900px;
+        }
+    }
+}
+
 @media(max-width: 1200px){
     .item-description-section{        
         .item-description-container{

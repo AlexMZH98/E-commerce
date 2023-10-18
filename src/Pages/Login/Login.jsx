@@ -128,8 +128,8 @@ const Login = () =>{
                             label={"Password"}
                             placeholder={"Enter your password"}
                             autoComplete={"new-password"}
-                            invisible={invisibleIcon}
-                            visible={visibleIcon}
+                            visible={invisibleIcon}
+                            invisible={visibleIcon}
                             inputType={passwordVisibility}
                             visibilityToggle={visibilityToggle}
                             inputValue={password}

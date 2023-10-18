@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useSelector } from "react-redux/es/hooks/useSelector"
 import { useDispatch } from "react-redux"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 import { getSuggestions } from "../../store/SuggestionsSlice/SuggestionsSlice"
 import { getRecommendedData } from "../../store/RecommendedSlice/RecommendedSlice"
@@ -20,11 +20,13 @@ import tick from "../../assets/images/tick.png"
 import "./style.scss"
 
 const Item = () => {
+    const [cartAccessToggle, setCartAccessToggle] = useState("")
     
     const [itemIndex, setItemIndex] = useState(0)
     const [refresh, setRefresh] = useState(false)
     const [error, setError] = useState()
     
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const params = useParams()
     const {itemId} = params
@@ -70,6 +72,26 @@ const Item = () => {
     return(
         <>        
         <section className="item-details-section">
+            <div className={`need-auth ${cartAccessToggle}`}>
+                <div className='need-auth-container'>
+                    <div>
+                        <h1>You need to be authorized to access your cart</h1>
+                    </div>
+                    <div className='need-auth-buttnos'>
+                        <div>
+                            <button onClick={() => {
+                                setCartAccessToggle('')
+                                navigate("/login")
+                            }}>authorize</button>
+                        </div>
+                        <div>
+                            <button onClick={() => {
+                                setCartAccessToggle('')
+                            }}>Cloce</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         {suggestionsData && suggestionsData.id ? (
             <React.Fragment>
             <div className="item-detail">
@@ -103,7 +125,13 @@ const Item = () => {
                                     Already in cart
                                 </button>
                                 ) : (
-                                <button onClick={() => {addToCart()}}>
+                                <button onClick={() => {
+                                    if(!userToken){
+                                        setCartAccessToggle("restrict")
+                                        return
+                                    }
+                                    addToCart()
+                                    }}>
                                     Move to Cart
                                 </button>
                                 )}
@@ -210,7 +238,13 @@ const Item = () => {
                                     Already in cart
                                 </button>
                                 ) : (
-                                <button onClick={() => {addToCart()}}>
+                                <button onClick={() => {
+                                    if(!userToken){
+                                        setCartAccessToggle("restrict")
+                                        return
+                                    }
+                                    addToCart()
+                                    }}>
                                     Move to Cart
                                 </button>
                                 )}
@@ -366,7 +400,13 @@ const Item = () => {
                                     Already in cart
                                 </button>
                                 ) : (
-                                <button onClick={() => {addToCart()}}>
+                                <button onClick={() => {
+                                    if(!userToken){
+                                        setCartAccessToggle("restrict")
+                                        return
+                                    }
+                                    addToCart()
+                                    }}>
                                     Move to Cart
                                 </button>
                                 )}

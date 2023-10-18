@@ -39,6 +39,14 @@
     }
 }
 
+@media (min-width: 2000px){
+    .footer-discount{
+        .footer-discount-container{
+            width: 1900px;
+        }
+    }
+}
+
 @media (max-width: 1000px){
     .footer-discount-svg{
         display: none;

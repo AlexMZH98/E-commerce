@@ -13,7 +13,7 @@ import Profile from "../../assets/images/icons/Profile.png"
 
 import "./style.scss"
 
-const Header =({changeCartAsseccToggle}) => {
+const Header =({changeCartAccessToggle}) => {
     const {cartData} = useSelector(state => state.cart)
     const {isInCart} = useSelector(state => state.cartCheck)
     
@@ -86,7 +86,8 @@ const Header =({changeCartAsseccToggle}) => {
                         </li>
                         <li id="my-cart-icon" onClick={() => {
                             if(!userToken){
-                                changeCartAsseccToggle("assecc")
+                                changeCartAccessToggle("restrict")
+                                return
                             }
                             navigate('/cart')
                         }}>

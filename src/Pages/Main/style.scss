@@ -430,6 +430,44 @@
     }
 }
 
+@media (min-width: 2000px){
+    .category-section{
+        .category-container{
+            width: 1900px;   
+        }
+    }
+
+    .offers-section{
+        .offers-container{
+            width: 1900px;
+        }
+    }
+
+    .suggestion-section{
+        .suggestion-container{
+            width: 1900px;
+        }
+    }
+
+    .supplier-section{
+        .supplier-bg{
+            width: 1900px;
+        }
+    }
+
+    .extra-services-section{
+        .extra-services-container{
+            width: 1900px;
+        }
+    }
+
+    .region-section{
+        .region-container{
+            width: 1900px;
+        }
+    }
+}
+
 @media(max-width: 1260px){
     .category-section{
         .category-container{

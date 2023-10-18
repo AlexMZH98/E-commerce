@@ -1,8 +1,8 @@
 .auth{
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     
     .auth-logo{
         padding: 40px 0 40px 80px;
@@ -16,12 +16,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-left: 40px;
 
         .signup{
             width: 35%;
             border: var(--border);
             border-radius: 6px;
-            padding: 14px 35px;
+            padding: 15px 35px;
             background-color: #fff;
 
             .welcome {
@@ -125,7 +126,6 @@
 }
 
 .auth-picture{
-    width: 57%;
     display: flex;
     justify-content: center;
     img{
@@ -160,6 +160,7 @@
         
         .auth-container{
             width: 100%;
+            padding: 0;
             .signup{
                 width: 80%;
             }

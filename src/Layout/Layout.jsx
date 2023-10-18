@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 
 import { getCartData } from "../store/CartSlice/CartSlice"
 
@@ -23,7 +23,6 @@ const Layout = () => {
     useEffect(() => {
         if(userToken){
             dispatch(getCartData())
-            console.log("yes")
         }
     },[dispatch,cartAccessToggle])
 
@@ -58,16 +57,16 @@ const Layout = () => {
         <BurgerMenu
         active={burgerActive}
         changeActive={burgerToggle}
-        changeCartAsseccToggle={setCartAccessToggle}
+        changeCartAccessToggle={setCartAccessToggle}
         />
         
         <div className={`layout ${burgerActive}`}>
             <Header
-            changeCartAsseccToggle={setCartAccessToggle}
+            changeCartAccessToggle={setCartAccessToggle}
             />
             <ResponsiveHeader
             burgerToggle={burgerToggle}
-            changeCartAsseccToggle={setCartAccessToggle}
+            changeCartAccessToggle={setCartAccessToggle}
             />
             <Router/>
             <Footer/>

@@ -35,6 +35,7 @@
 
 .filter-container{
     width: 18%;
+    width: 200px;
     display: flex;
     flex-direction: column;
 
@@ -425,6 +426,14 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+}
+
+@media (min-width: 2000px){
+    .list-items-section{
+        .list-items-section-container{
+            width: 1900px;
+        }
+    }
 }
 
 @media (max-width: 1250px){
