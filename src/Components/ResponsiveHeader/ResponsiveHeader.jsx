@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 import logo from "../../assets/images/logo.png"
 import shopping_cart from "../../assets/images/responsive_header/shopping_cart.png"
@@ -9,6 +10,7 @@ import search from "../../assets/images/responsive_header/search.png"
 import "./style.scss"
 
 const ResponsiveHeader = ({burgerToggle, changeCartAccessToggle}) => {
+    const {cartData} = useSelector(state => state.cart)
     const navigate = useNavigate()
     const {pathname} = useLocation()
 
@@ -84,6 +86,11 @@ const ResponsiveHeader = ({burgerToggle, changeCartAccessToggle}) => {
                                     navigate('/cart')
                                 }
                                 }} />
+                                { !userToken || !cartData.length ? (null) : (
+                                <span>
+                                    {cartData.length}
+                                </span>
+                            )}
                         </div>
 
                         <div onClick={() => {

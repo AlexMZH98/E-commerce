@@ -6,11 +6,11 @@ import { getCartData } from "../store/CartSlice/CartSlice"
 
 import Header from "../Components/Header/Header"
 import ResponsiveHeader from "../Components/ResponsiveHeader/ResponsiveHeader"
+import BurgerMenu from "../Components/BurgerMenu/BurgerMenu"
 import Router from "../Router/Router"
 import Footer from "../Components/Footer/Footer"
 
 import "./style.scss"
-import BurgerMenu from "../Components/BurgerMenu/BurgerMenu"
 
 const Layout = () => {
     const [burgerActive, setBurgerActive] = useState("")
@@ -24,7 +24,7 @@ const Layout = () => {
         if(userToken){
             dispatch(getCartData())
         }
-    },[dispatch,cartAccessToggle])
+    },[dispatch,cartAccessToggle, userToken])
 
     const burgerToggle = () => {
         setBurgerActive((preState) => preState === "" ? "active" : "")
