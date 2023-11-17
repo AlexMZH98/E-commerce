@@ -25,7 +25,6 @@ import "./style.scss"
 const Cart = () => {
     const {recommendedData,recommendedError} = useSelector(state => state.recommended)
     const {cartData, cartPrice} = useSelector(state => state.cart)
-
     const [refresh, setRefresh] = useState(false)
     const [cartError, setCartError] = useState()
     const navigate = useNavigate()
@@ -51,7 +50,7 @@ const Cart = () => {
     const removeFromCart = async (id) => {
         const userToken = JSON.parse(localStorage.getItem('userToken'))
         try {
-            const res = await fetch('https://digitalinstitute-amazon.azurewebsites.net/api/cart/removefromcart', {
+            await fetch('https://digitalinstitute-amazon.azurewebsites.net/api/cart/removefromcart', {
                 method: 'DELETE',
                 headers: { 
                 'Content-Type': 'application/json',
@@ -61,7 +60,7 @@ const Cart = () => {
                     productId: id
                 })
             })
-            setRefresh((preState) => preState === false ? true : false)
+            setRefresh((preState) => !preState)
         }
         catch (error){
         }
@@ -73,7 +72,7 @@ const Cart = () => {
         }
         const userToken = JSON.parse(localStorage.getItem('userToken'))
         try {
-            const res = await fetch('https://digitalinstitute-amazon.azurewebsites.net/api/cart/addincart', {
+            await fetch('https://digitalinstitute-amazon.azurewebsites.net/api/cart/addincart', {
                 method: 'POST',
                 headers: { 
                 'Content-Type': 'application/json',
@@ -83,7 +82,7 @@ const Cart = () => {
                     productId: itemId
                 })
             })
-            setRefresh((preState) => preState === false ? true : false)
+            setRefresh((preState) => !preState)
             setCartError(false)
         }
         catch (error) {

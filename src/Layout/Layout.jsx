@@ -17,7 +17,6 @@ const Layout = () => {
     const [cartAccessToggle, setCartAccessToggle] = useState('')
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    
     const userToken = JSON.parse(localStorage.getItem('userToken'))
     
     useEffect(() => {
