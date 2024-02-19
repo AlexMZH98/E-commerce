@@ -52,7 +52,7 @@ const Cart = () => {
         try {
             await fetch('https://ngglobalwebapi20231210182820.azurewebsites.net/api/cart/removefromcart', {
                 method: 'DELETE',
-                headers: { 
+                headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${userToken}`
                 },
